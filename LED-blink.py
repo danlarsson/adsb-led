@@ -27,9 +27,10 @@ def main():
             print('Lost connection, trying to reconnect')
             s.close()
             s = connect()
-            blink()
-            # Uncomment the line below if you like to see the raw data.
-            # print data.strip()
+
+         blink()
+         # Uncomment the line below if you like to see the raw data.
+         #print data.strip()
 
       except socket.error:
          print('Lost connecttion, reconnecting')
@@ -38,7 +39,6 @@ def main():
 
 # Well it blinks, a short one.
 def blink():
-   # print('Blink')
    GPIO.output(LED, GPIO.HIGH)
    time.sleep(LIGHT_ON)
    GPIO.output(LED, GPIO.LOW)
